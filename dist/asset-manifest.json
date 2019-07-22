@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/static/css/main.1a342435.chunk.css",
+    "main.js": "/static/js/main.1a398492.chunk.js",
+    "main.js.map": "/static/js/main.1a398492.chunk.js.map",
+    "runtime~main.js": "/static/js/runtime~main.a8a9905a.js",
+    "runtime~main.js.map": "/static/js/runtime~main.a8a9905a.js.map",
+    "static/css/2.266e55a5.chunk.css": "/static/css/2.266e55a5.chunk.css",
+    "static/js/2.de22bdad.chunk.js": "/static/js/2.de22bdad.chunk.js",
+    "static/js/2.de22bdad.chunk.js.map": "/static/js/2.de22bdad.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.05b94935819587cec51459f235773427.js": "/precache-manifest.05b94935819587cec51459f235773427.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/2.266e55a5.chunk.css.map": "/static/css/2.266e55a5.chunk.css.map",
+    "static/css/main.1a342435.chunk.css.map": "/static/css/main.1a342435.chunk.css.map",
+    "static/media/reskill.css": "/static/media/DBHelvethaicaX-55Regular.f7153938.ttf",
+    "static/media/banner01@2x.png": "/static/media/banner01@2x.159ae9ea.png",
+    "static/media/banner@2x.png": "/static/media/banner@2x.7c695264.png"
+  }
+}
