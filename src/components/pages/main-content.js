@@ -87,7 +87,7 @@ class MainContent extends Component {
         
         { this.state.items.map((item) => {
           return(
-            <ListSkillBottom skill={item} key={item.item_id} />
+            <ListSkillBottom skill={item} countItem="3" key={item.item_id} />
           )
         })}
         <Col md="12" className="d-flex justify-content-end">

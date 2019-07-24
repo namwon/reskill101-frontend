@@ -2,7 +2,7 @@ import React from 'react'
 import { Col } from 'reactstrap'
 import { Link } from 'react-router-dom'
 
-const ListSkillBottom = ({skill}) => {
+const ListSkillBottom = ({skill},{countItem}) => {
     return(
         
         <Col md="3" >
