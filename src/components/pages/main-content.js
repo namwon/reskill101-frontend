@@ -23,7 +23,7 @@ class MainContent extends Component {
     }
  }
   componentDidMount(){
-    const itemsRef = firebase.database().ref('bookshelf/data').orderByChild('createedAt').limitToLast(3);
+    const itemsRef = firebase.database().ref('bookshelf/data').orderByChild('createedAt');
     
     itemsRef.on('value',(snapshot) => {
        let items = snapshot.val();
@@ -70,10 +70,12 @@ class MainContent extends Component {
               <Col md="6">
                 <Container>
                   <h4 className="popSkills">POP SKILLS ..</h4>
-                  { this.state.items.map((item) => {
-                    return(
-                      <ListSkill skill={item} key={item.item_id} />
-                    )
+                  { this.state.items.map((item,index) => {
+                    if (index<3) {
+                      return(
+                        <ListSkill skill={item} key={item.item_id} />
+                      )
+                    }
                   })}
                 </Container>
               </Col>
@@ -85,10 +87,12 @@ class MainContent extends Component {
         <Container>
         <Row className="mt-5">
         
-        { this.state.items.map((item) => {
-          return(
-            <ListSkillBottom skill={item} countItem="3" key={item.item_id} />
-          )
+        { this.state.items.map((item,index) => {
+          if (index<4) {
+            return(
+              <ListSkillBottom skill={item} key={item.item_id} />
+            )
+          }
         })}
         <Col md="12" className="d-flex justify-content-end">
       SEE ALL COLLECTIONS
