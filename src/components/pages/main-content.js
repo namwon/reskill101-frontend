@@ -1,13 +1,14 @@
-import React, {Component} from 'react'
-import { Container, Row, Col, Media } from 'reactstrap'
-import banner01 from '../../images/banner01@2x.png'
-import banner0 from '../../images/banner@2x.png'
-import ListSkill from '../layouts/listSkill'
-import { connect } from 'react-redux'
-import firebase from '../../config/firebase'
-import { firebaseConnect } from 'react-redux-firebase'
-import { compose } from 'redux'
+import React, {Component} from 'react';
+import { Container, Row, Col } from 'reactstrap';
+
+import banner0 from '../../images/banner@2x.png';
+import ListSkill from '../layouts/listSkill';
+import { connect } from 'react-redux';
+import firebase from '../../config/firebase';
+import { firebaseConnect } from 'react-redux-firebase';
+import { compose } from 'redux';
 import ListSkillBottom from '../layouts/listSkillBottom';
+import CtaAd from '../layouts/ctaAd';
 
 class MainContent extends Component {
   constructor(props){
@@ -46,26 +47,25 @@ class MainContent extends Component {
   render() {
     //const { skills } = this.props;    
     return (
-      <Container>
-        <Row className="row-full bg-graydark ">
+      <div>
+        <Row className="row-full bg-graydark banner-hero">
           <Container>
             <Row>
-              <Col md="6">
+              <Col md="8" >
                 <div className="mainTopHeader">
                   to learn new skills so that you can do a different job
                 </div>
               </Col>
-              <Col md="6">
-                <img src={banner01} width="100%" />
-              </Col>
+        
             </Row>
           </Container>
         </Row>
+        <div className="bggray">
         <Row>
           <Container>
             <Row>
               <Col md="6">
-                <img className="imgIndex01" src={banner0} width="100%" />
+                <img className="imgIndex01" src={banner0} width="100%" alt="Reskill"/>
               </Col>
               <Col md="6">
                 <Container>
@@ -80,14 +80,24 @@ class MainContent extends Component {
             </Row>
           </Container>
         </Row>
-        <Row style={{backgroundColor:"#e5e5e5", paddingTop:25, paddingBottom:25}}>
+        </div>
+        <div>
+        <Container>
+        <Row className="mt-5">
+        
         { this.state.items.map((item) => {
           return(
             <ListSkillBottom skill={item} key={item.item_id} />
           )
         })}
+        <Col md="12" className="d-flex justify-content-end">
+      SEE ALL COLLECTIONS
+      </Col>
         </Row>
-      </Container>
+        </Container>
+        </div>
+        <CtaAd />
+      </div>
     );
   }
 }

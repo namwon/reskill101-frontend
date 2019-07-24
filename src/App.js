@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import Header from './components/layouts/Header'
+import Footer from './components/layouts/footer'
+import CTA from './components/layouts/cta'
 import { Route } from 'react-router-dom'
 import { BrowserRouter } from 'react-router-dom'
 
@@ -16,13 +18,15 @@ class App extends Component{
         <BrowserRouter>
           <div className="App">
             <Header />
-            <div className="container">
+            <div>
               <Route exact path="/" component={MainContent} />
               <Route path="/skills" component={Skills} />
               <Route path="/skill/:id" component={SkillDetail} />
               <Route path="/certifications" component={Certifications} />
               <Route path="/jobs" component={Jobs} />
             </div>
+            <CTA />
+            <Footer />
           </div>
         </BrowserRouter>
         

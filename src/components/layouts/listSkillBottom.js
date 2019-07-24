@@ -1,15 +1,19 @@
 import React from 'react'
-import { Container, Row, Col, Media } from 'reactstrap'
+import { Col } from 'reactstrap'
 import { Link } from 'react-router-dom'
 
 const ListSkillBottom = ({skill}) => {
     return(
-        <Col md="4">
+        
+        <Col md="3" >
+            <div className="thumb-post">
             <Link to={'/skill/' + skill.item_id} key={skill.item_id} >
-                <img src={skill.photos} alt={skill.title} width="100%" height="200"/>
+                <img  src={skill.photos} alt={skill.title} />
                 <p>{skill.title}</p>
-            </Link>            
+            </Link>    
+            </div>       
         </Col>
+     
     )
 }
 

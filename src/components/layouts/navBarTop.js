@@ -17,10 +17,10 @@ import {
   NavItem,
   NavLink
 } from 'reactstrap';
-//import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { library } from '@fortawesome/fontawesome-svg-core'
-import { fas } from "@fortawesome/free-solid-svg-icons";
+//  import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
+//  import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+ import { library } from '@fortawesome/fontawesome-svg-core'
+ import { fas } from "@fortawesome/free-solid-svg-icons";
 
 library.add(fas)
 
@@ -43,7 +43,7 @@ library.add(fas)
       <div className="container">
         <Navbar className="top-menu" color="" light expand="md">
           <NavbarBrand href="/">
-              <img src={logo} style={{width:100}}/>
+              <img src={logo} style={{width:150}} alt="Reskill101"/>
           </NavbarBrand>
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>

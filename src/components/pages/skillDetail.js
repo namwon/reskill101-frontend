@@ -5,6 +5,7 @@ import firebase from '../../config/firebase'
 import { firebaseConnect } from 'react-redux-firebase'
 import { Container } from 'reactstrap'
 import ListSkillView from '../layouts/listSkillView'
+import Bannerinsidepage from '../layouts/bannerinsidepage'
 
 class SkillDetail extends Component{
     constructor(props){
@@ -14,7 +15,8 @@ class SkillDetail extends Component{
          page_id: '',
          pagedesc:'',
          photo:'',
-        }        
+        }   
+      
      }
     componentDidMount(){
         const { id } = this.props;
@@ -36,24 +38,36 @@ class SkillDetail extends Component{
            })
         })
       }
+      
     render(props){
         const { skill } = this.props;
         return(
-            <Container>
-                <h2>{skill.title}<br/><small>Date: {skill.createedAt}</small></h2>
-                <Container>
+            <div>
+              <Bannerinsidepage />
+              <div className="text-white bg-blk block pt-5">
+              <Container>
+                <h2>{skill.title}<br/></h2><p>Date: {skill.createedAt}</p>
+               
                   { this.state.items.map((item) => {
                     return(
                       <ListSkillView skill={item} key={item.page_id} />
                     )
                   })}
-                </Container>
-                <p>
+               <div>
+               
                     <h4>Deacription Skill:</h4>
+                    <div className="pb-4">
                     {skill.desc}
-                </p>
-            </Container>
-            
+                    </div>
+                    <div className="pb-4">
+                    <h5>Resources</h5>
+                    Presentation Slides (PDF)
+                   
+                </div>
+                </div>
+                </Container>
+            </div>
+            </div>
         )
     }
 }

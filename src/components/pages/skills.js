@@ -4,7 +4,10 @@ import { connect } from 'react-redux'
 import firebase from '../../config/firebase'
 import { firebaseConnect } from 'react-redux-firebase'
 import { compose } from 'redux'
-import ListSkill from '../layouts/listSkill'
+import ListSkillinside from '../layouts/listSkillinside'
+import Bannerinsidepage from '../layouts/bannerinsidepage'
+
+
 
 class Skills extends Component{
     constructor(props){
@@ -21,6 +24,8 @@ class Skills extends Component{
       componentDidMount(){
         const itemsRef = firebase.database().ref('bookshelf/data').orderByChild('createedAt');
         
+     
+
         itemsRef.on('value',(snapshot) => {
            let items = snapshot.val();
            let newState = [];
@@ -38,28 +43,43 @@ class Skills extends Component{
            })
     
         })
-    
+
+       
       }
+      
     render(){
+       
+
         return(
+          <div>
+          <Bannerinsidepage />
         <Container>
+          
             <Row>
-                <Col md="12">
-                    <Container>
-                    <h4 className="popSkills">SKILLS to Learn..</h4>
+   
+               <Col md="12">
+            <h4 className="popSkills">SKILLS to Learn..</h4>
+            </Col>
+               
                     { this.state.items.map((item) => {
                         return(
-                        <ListSkill skill={item} key={item.item_id} />
+                        <ListSkillinside skill={item} key={item.item_id} />
                         )
                     })}
-                    </Container>
-                </Col>
+
+                    
+             
             </Row>
         </Container>
+        </div>
         )
     }
 }
 //export default Skills
+
+
+
+
 
 const mapStateToProps = (state) => {
     //console.log(state)

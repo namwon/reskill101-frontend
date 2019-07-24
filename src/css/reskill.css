@@ -8,14 +8,21 @@
     font-weight: normal;
     font-style: normal;
 }
-
+body{
+    margin: 0;
+}
 .top-menu * {
     /*color: #303769 !important;*/
     font-family: 'DB Helvethaica X 55';
-    font-size: 16pt;
+    font-size: 20pt;
 
 }
-
+.navbar {
+    padding: 0rem 0rem;
+}
+.navbar-brand{
+    padding-top: 0;
+    padding-bottom: 0;}
 /*.active,
 .nav-item:hover {
     background-color: #303769 !important;
@@ -30,7 +37,7 @@
 .navbar-light .navbar-nav .nav-link.show,
 .navbar-light .navbar-nav .nav-link.active,
 .navbar-light .navbar-nav .nav-link:hover, .navbar-light .navbar-nav .nav-link:focus {
-    background-color: #303769 !important;
+    background-color: #1D2539 !important;
     font-weight: bold;
     color: white !important;
 }
@@ -65,16 +72,17 @@
     left: 50%;
 }
 .bg-graydark {
-    background-color: #363636;
+    background-color: #111111;
     color: #E8E8E8;
 }
 .mainTopHeader{
     position: absolute;
     font-family: 'DB Helvethaica X 55';
     font-size: 25vw;
-    font-weight: bold;
+   /* font-weight: bold;*/
     line-height: 70px;
     z-index: 99999;
+    padding-top: 20pt;
 }
 .imgIndex01{
     margin-top: -50px;
@@ -89,7 +97,7 @@
 .mediaHead{
     font-family: 'DB Helvethaica X 55';
     color: #5e5e5e;
-    font-weight: bold;
+    /* font-weight: bold; */
 }
 .media-body {
     padding-left: 15px !important;
@@ -101,7 +109,7 @@
         position: absolute;
         font-family: 'DB Helvethaica X 55';
         font-size: 110pt;
-        font-weight: bold;
+        /* font-weight: bold; */
         line-height: 120px;
         z-index: 99999;
     }
@@ -113,7 +121,7 @@
         position: absolute;
         font-family: 'DB Helvethaica X 55';
         font-size: 12vw;
-        font-weight: bold;
+        /* font-weight: bold; */
         line-height: 70px;
         z-index: 99999;
     }
@@ -124,7 +132,7 @@
         position: absolute;
         font-family: 'DB Helvethaica X 55';
         font-size: 93pt;
-        font-weight: bold;
+        /* font-weight: bold; */
         line-height: 100px;
         z-index: 99999;
     }
@@ -136,8 +144,8 @@
         position: absolute;
         font-family: 'DB Helvethaica X 55';
         font-size: 110pt;
-        font-weight: bold;
-        line-height: 120px;
+        /* font-weight: bold; */
+        line-height: 100px;
         z-index: 99999;
     }
   }
@@ -147,3 +155,82 @@
       color: #5e5e5e;
       text-decoration: none;
   }
+
+  .banner-hero{
+      background-image: url("../images/banner01@2x.png");
+      background-repeat: no-repeat;
+      background-size: 51%;
+      background-position: right;
+      min-height: 500pt;
+  }
+  .banner-inside{
+    background-image: url("../images/bn-colour-dark@2x.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: right;
+    min-height: 260pt;
+    color: #ffffff;
+
+}
+  .thumb-post img {
+    object-fit: cover; /* Do not scale the image */
+    object-position: center; /* Center the image within the element */
+    max-height: 399px;
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+  .bggray{
+      background-color: #e5e5e5;
+  }
+  .footerlogo{
+      height: 47px;
+      width: 21px;
+  }
+  .footerbg{
+      padding: 30pt 0;
+      background-color: #EFEFEF;
+      font-size: 9pt;
+  }
+  .fbg-red{
+    background-color: rgb(255, 0, 0);
+    font-size: 11pt;
+}
+.fbg-yellow{
+    background-color:#FAF17B;
+    font-size: 11pt;
+}
+.fbg-white{
+    background-color:rgb(247, 247, 247);
+    font-size: 11pt;
+}
+.enjoy{
+    height: 400px;
+    background-image: url("../images/image6@2x.png");
+    background-repeat: none;
+    background-size: cover;
+    background-position: center bottom;
+}
+.bg-blk{
+    background-color: #000000;
+}
+.media img{
+    object-fit: cover; /* Do not scale the image */
+    object-position: center; /* Center the image within the element */
+    /* max-height: 399px; */
+    width: 85%;
+    margin-bottom: 1rem;
+}
+.card{
+    border: 0;
+}
+.card-body{
+    padding-left: .5px;
+}
+.img-thumbnail-rs {
+    padding: 0;
+    /* background-color: #fff; */
+    border: 0px solid #dee2e6;
+    border-radius: .25rem;
+    max-width: 150px;
+    height: auto;
+}
