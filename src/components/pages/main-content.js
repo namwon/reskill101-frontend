@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import { Container, Row, Col } from 'reactstrap';
-import { Link } from 'react-router-dom'
+//import { Link } from 'react-router-dom'
 
 import banner0 from '../../images/banner@2x.png';
 import ListSkill from '../layouts/listSkill';
