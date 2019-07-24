@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import { Container, Row, Col } from 'reactstrap';
+import { Link } from 'react-router-dom'
 
 import banner0 from '../../images/banner@2x.png';
 import ListSkill from '../layouts/listSkill';
@@ -84,21 +85,22 @@ class MainContent extends Component {
         </Row>
         </div>
         <div>
-        <Container>
-        <Row className="mt-5">
-        
-        { this.state.items.map((item,index) => {
-          if (index<4) {
-            return(
-              <ListSkillBottom skill={item} key={item.item_id} />
-            )
-          }
-        })}
-        <Col md="12" className="d-flex justify-content-end">
-      SEE ALL COLLECTIONS
-      </Col>
-        </Row>
-        </Container>
+          <Container>
+            <Row className="mt-5">
+              { this.state.items.map((item,index) => {
+                if ((index > 3) && (index < 8)) {
+                  return(
+                    <ListSkillBottom skill={item} key={item.item_id} />
+                  )
+                }
+              })}
+              <Col md="12" className="d-flex justify-content-end">
+                <a href='/skills'>
+                  SEE ALL COLLECTIONS
+                </a>
+              </Col>
+            </Row>
+          </Container>
         </div>
         <CtaAd />
       </div>
