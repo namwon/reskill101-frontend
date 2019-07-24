@@ -6,7 +6,7 @@ import { firebaseConnect } from 'react-redux-firebase'
 import { compose } from 'redux'
 import ListSkillinside from '../layouts/listSkillinside'
 import Bannerinsidepage from '../layouts/bannerinsidepage'
-//import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 
 
@@ -21,7 +21,7 @@ class Skills extends Component{
          photos:null,
          createedAt:'',
          cur_page: 1, 
-         per_page: 4,
+         per_page: 8,
          counterRow: 0
       }
    }
@@ -52,18 +52,32 @@ class Skills extends Component{
          })
       })
    }
-
+/**
+ * <nav aria-label="Page navigation example">
+  <ul class="pagination">
+    <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+    <li class="page-item"><a class="page-link" href="#">1</a></li>
+    <li class="page-item"><a class="page-link" href="#">2</a></li>
+    <li class="page-item"><a class="page-link" href="#">3</a></li>
+    <li class="page-item"><a class="page-link" href="#">Next</a></li>
+  </ul>
+</nav>
+ */
    createNavi(){
+      let navi = []
       let buttons = []
       let count = this.state.counterRow
       let perPage = this.state.per_page
       
       for (let i=1; i <= Math.ceil(count/perPage); i++) {
          buttons.push(
-            <button onClick={() => this.handleChangePage(i)}>{i}</button>
+            <li clasclassNames="page-item">
+               <Link className="page-link" to={"/skills/"+i} onClick={() => this.handleChangePage(i)}>{i}</Link>
+            </li>
          )
       }
-      return buttons
+      navi.push(<ul className="pagination">{buttons}</ul>)
+      return navi
    }
       
    render(){
@@ -83,7 +97,9 @@ class Skills extends Component{
                      }
                   })}
                   <Col md="12">
-                     {this.createNavi()}
+                     <nav>
+                        {this.createNavi()}
+                     </nav>
                   </Col>
                </Row>
             </Container>
