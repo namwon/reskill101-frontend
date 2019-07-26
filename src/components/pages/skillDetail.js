@@ -15,6 +15,8 @@ class SkillDetail extends Component{
          page_id: '',
          pagedesc:'',
          photo:'',
+         linkvideo:'',
+         titlevideo:''
         }   
       
      }
@@ -30,7 +32,9 @@ class SkillDetail extends Component{
               newState.push({
                  page_id:item,
                  pagedesc:items[item].pagedesc,
-                 photo:items[item].photo
+                 photo:items[item].photo,
+                 linkvideo:items[item].linkvideo,
+                 titlevideo:items[item].titlevideo
               })
            }
            this.setState({
