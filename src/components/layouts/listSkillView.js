@@ -4,8 +4,10 @@ import { Media } from 'reactstrap'
 const ListSkillView = ({skill}) => {
     return(
         <Media style={{marginBottom:20}}>
-            <Media left href="#">
-                <Media object src={skill.photo} alt={skill.pagedesc} />
+            <Media left href="#">                
+                <div className="embed-responsive embed-responsive-16by9">
+                    <iframe className="embed-responsive-item" src={skill.photo} allowfullscreen></iframe>
+                </div>
             </Media>
             <Media body>
                 {skill.pagedesc} 
