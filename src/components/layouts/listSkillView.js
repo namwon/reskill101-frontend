@@ -1,6 +1,7 @@
 import React from 'react'
 //import { Link } from 'react-router-dom'
-import { Card, CardTitle, CardText } from 'reactstrap'
+import { Card, CardImg, CardText, CardBody, CardLink,
+    CardTitle, CardSubtitle } from 'reactstrap'
 
 const ListSkillView = ({skill}) => {
     const MAX_LENGTH = 150;
@@ -8,8 +9,9 @@ const ListSkillView = ({skill}) => {
         <Card sm="3">
             <CardBody>
                 <CardTitle>{skill.titlevideo}</CardTitle>
+                <CardSubtitle>by {skill.teacher}</CardSubtitle>
             </CardBody>
-            <img width="100%" src={skill.photo} alt={skill.titlevideo} />
+            <CardImg width="100%" src={skill.photo} alt={skill.titlevideo} />
             <CardBody>
                 <CardText>
                 {skill.pagedesc.length > MAX_LENGTH ?
