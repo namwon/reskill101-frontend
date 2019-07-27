@@ -1,30 +1,27 @@
 import React from 'react'
 //import { Link } from 'react-router-dom'
-import { Card, CardImg, CardText, CardBody, CardLink,
-    CardTitle, CardSubtitle } from 'reactstrap'
+import { Card, CardImg, CardText, CardTitle, Col, Button  } from 'reactstrap'
 
 const ListSkillView = ({skill}) => {
-    const MAX_LENGTH = 150;
+    const MAX_LENGTH = 50;
     return(
-        <Card sm="3">
-            <CardBody>
+        <Col sm="6">
+            <Card body>
                 <CardTitle>{skill.titlevideo}</CardTitle>
-                <CardSubtitle>by {skill.teacher}</CardSubtitle>
-            </CardBody>
-            <CardImg width="100%" src={skill.photo} alt={skill.titlevideo} />
-            <CardBody>
-                <CardText>
-                {skill.pagedesc.length > MAX_LENGTH ?
-                    (
-                        <div>
-                        {`${skill.pagedesc.substring(0, MAX_LENGTH)}...`}
-                        </div>
-                    ) :
-                    <p>{skill.pagedesc}</p>
-                }
+                <CardImg width="100%" src={skill.photo} alt={skill.titlevideo}/>
+                <CardText style={{color: "#000"}}>
+                    {skill.pagedesc.length > MAX_LENGTH ?
+                        (
+                            <div>
+                            {`${skill.pagedesc.substring(0, MAX_LENGTH)}...`}
+                            </div>
+                        ) :
+                        <p>{skill.pagedesc}</p>
+                    }
                 </CardText>
-            </CardBody>
-        </Card>
+                <Button>Go somewhere</Button>
+            </Card>
+        </Col>
     )
 }
 
