@@ -3,13 +3,13 @@ import { Link } from 'react-router-dom'
 import { CardBody, CardImg, CardText, CardHeader, Col  } from 'reactstrap'
 
 const ListSkillView = ({skill,id}) => {
-    const MAX_LENGTH = 50;
+    const MAX_LENGTH = 100;
     return(
         <Col sm="4">
             <CardBody>
-                <CardHeader>{skill.titlevideo}</CardHeader>
+                <CardHeader style={{minHeight: "70px" }}>{skill.titlevideo}</CardHeader>
                 <CardImg height="250" width="auto" src={skill.photo} alt={skill.titlevideo}/>
-                <CardText>
+                <CardText style={{minHeight: "100px" }}>
                     {skill.pagedesc.length > MAX_LENGTH ?
                         (
                             <div>
