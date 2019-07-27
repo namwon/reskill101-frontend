@@ -17,8 +17,7 @@ const ListSkill = ({skill}) => {
                     <Media heading className="h5">
                         {skill.title} 
                     </Media>
-                    <p> <small>by<br/> </small> 
-                    {skill.desc} </p>
+                    <p>{skill.desc}</p>
                 </Link>
                 
             </Media>
