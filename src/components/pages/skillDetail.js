@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import { compose } from 'redux'
 import firebase from '../../config/firebase'
 import { firebaseConnect } from 'react-redux-firebase'
-import { Container } from 'reactstrap'
+import { Container,Row } from 'reactstrap'
 import ListSkillView from '../layouts/listSkillView'
 import Bannerinsidepage from '../layouts/bannerinsidepage'
 
@@ -51,12 +51,13 @@ class SkillDetail extends Component{
               <div className="text-white bg-blk block pt-5">
               <Container>
                 <h2>{skill.title}<br/></h2><p>Date: {skill.createedAt}</p>
-               
+                  <Row>
                   { this.state.items.map((item) => {
                     return(
                       <ListSkillView skill={item} key={item.page_id} />
                     )
                   })}
+                  </Row>               
                <div>
                
                     <h4>Deacription Skill:</h4>
