@@ -3,7 +3,7 @@ import { Media } from 'reactstrap'
 import { Link } from 'react-router-dom'
 import {  Col, Card } from 'reactstrap';
 
-const ListSkill = ({skill}) => {
+const InsideSkill = ({skill}) => {
     return(
         <Col md="3" >
           
@@ -28,5 +28,5 @@ const ListSkill = ({skill}) => {
     )
 }
 
-export default ListSkill
+export default InsideSkill
 

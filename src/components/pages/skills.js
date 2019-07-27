@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 import firebase from '../../config/firebase'
 import { firebaseConnect } from 'react-redux-firebase'
 import { compose } from 'redux'
-import ListSkillinside from '../layouts/listSkillinside'
+import ListSkillinside from '../layouts/insideSkill'
 import Bannerinsidepage from '../layouts/bannerinsidepage'
 import { Link } from 'react-router-dom'
 
