@@ -44,7 +44,7 @@ class SkillDetail extends Component{
       }
       
     render(props){
-        const { skill } = this.props;
+        const { skill, id } = this.props;
         return(
             <div>
               <Bannerinsidepage />
@@ -54,7 +54,7 @@ class SkillDetail extends Component{
                   <Row>
                   { this.state.items.map((item) => {
                     return(
-                      <ListSkillView skill={item} key={item.page_id} />
+                      <ListSkillView skill={item} id={id} key={item.page_id} />
                     )
                   })}
                   </Row>               
