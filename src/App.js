@@ -11,7 +11,7 @@ import Certifications from './components/pages/certifications'
 import Jobs from './components/pages/jobs'
 
 import './css/reskill.css';
-import ViewVideo from './components/layouts/insideSkill';
+import ViewVideo from './components/pages/viewVideoSkill';
 class App extends Component{
     render(){
       return(

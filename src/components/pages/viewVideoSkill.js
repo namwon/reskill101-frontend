@@ -7,7 +7,7 @@ import { Container,Row } from 'reactstrap'
 import ListSkillView from '../layouts/listSkillView'
 import Bannerinsidepage from '../layouts/bannerinsidepage'
 
-class SkillDetail extends Component{
+class ViewVideo extends Component{
     constructor(props){
         super(props);
         this.state = {
@@ -79,18 +79,17 @@ class SkillDetail extends Component{
 
 const mapStateToProps = (state, ownProps) => {
     const id = ownProps.match.params.id
+    const sid = ownProps.match.params.sid
     const mainItems = state.firebase.data.bookshelf
     const skill = mainItems ? mainItems.data[id] : null
     //console.log(state);
   
    return{
      skill: skill,
-     id: id
+     id: id,
+     sid: sid
    }
-  
-    
-  
-  }
+}
 //export default SkillDetail
 export default compose(
     connect(mapStateToProps),
@@ -100,4 +99,4 @@ export default compose(
       ]
     })
     
-  )(SkillDetail)
+  )(ViewVideo)
