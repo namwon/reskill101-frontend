@@ -234,3 +234,7 @@ body{
     max-width: 150px;
     height: auto;
 }
+
+div{
+    white-space: pre-wrap;
+}
