@@ -11,7 +11,7 @@ import Certifications from './components/pages/certifications'
 import Jobs from './components/pages/jobs'
 
 import './css/reskill.css';
-import InsideSkill from './components/layouts/insideSkill';
+import ViewVideo from './components/layouts/insideSkill';
 class App extends Component{
     render(){
       return(
@@ -22,7 +22,7 @@ class App extends Component{
               <Route exact path="/" component={MainContent} />
               <Route path="/skills" component={Skills} />
               <Route path="/skill/:id" component={SkillDetail} />
-              <Route path="/videos/:id/:vid" component={InsideSkill} />
+              <Route path="/videos/:id/:vid" component={ViewVideo} />
               <Route path="/certifications" component={Certifications} />
               <Route path="/jobs" component={Jobs} />
             </Switch>
