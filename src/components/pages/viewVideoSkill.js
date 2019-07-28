@@ -11,75 +11,69 @@ class ViewVideo extends Component{
     constructor(props){
         super(props);
         this.state = {
-         items:[],
-         page_id: '',
-         pagedesc:'',
-         photo:'',
-         linkvideo:'',
-         titlevideo:''
+          items:[],
+          teacher: '',
+          page_id: '',
+          pagedesc:'',
+          linkvideo:'',
+          titlevideo:'',
+          duration:''
         }   
-      
      }
     componentDidMount(){
-        const { id } = this.props;
-        const itemsRef = firebase.database().ref('bookshelf/data/'+ id + '/page')
-        //console.log(itemsRef);
-             
-        itemsRef.on('value',(snapshot) => {
-           let items = snapshot.val();
-           let newState = [];
-           for(let item in items){
-              newState.push({
-                 page_id:item,
-                 pagedesc:items[item].pagedesc,
-                 photo:items[item].photo,
-                 linkvideo:items[item].linkvideo,
-                 titlevideo:items[item].titlevideo
-              })
-           }
-           this.setState({
-              items:newState
-           })
+      const { id, vid } = this.props;
+      const itemsRef = firebase.database().ref('bookshelf/data/'+ id + '/page/'+ vid)
+      //console.log(id);
+      //console.log(vid);
+      
+      itemsRef.on('value',(snapshot) => {
+        let items = snapshot.val();
+        //console.log(items);
+        
+        this.setState({
+          page_id:items,
+          pagedesc:items.pagedesc,
+          linkvideo:"https://www.youtube.com/embed/" + items.linkvideo + "?rel=0",
+          titlevideo:items.titlevideo,
+          teacher: items.teacher,
+          duration:items.duration
         })
-      }
+      })
+    }
       
     render(props){
-        const { skill, id } = this.props;
+        const { skill } = this.props;
         return(
-            <div>
-              <Bannerinsidepage />
-              <div className="text-white bg-blk block pt-5">
+          <div>
+            <Bannerinsidepage />
+            <div className="text-white bg-blk block pt-5">
               <Container>
-                <h2>{skill.title}<br/></h2><p>Date: {skill.createedAt}</p>
-                  <Row>
-                  { this.state.items.map((item) => {
-                    return(
-                      <ListSkillView skill={item} id={id} key={item.page_id} />
-                    )
-                  })}
-                  </Row>               
-               <div>
-               
-                    <h4>Deacription Skill:</h4>
-                    <div className="pb-4">
-                    {skill.desc}
-                    </div>
-                    <div className="pb-4">
+                <h2>{this.state.titlevideo}<br/></h2>
+                <p>by: {this.state.teacher}</p>
+                <div className="embed-responsive embed-responsive-16by9 mt-5 mb-5">
+                  <iframe className="embed-responsive-item" src={this.state.linkvideo} allowfullscreen></iframe>
+                </div>
+                <div>
+                  <h4>Deacription Skill:</h4>
+                  <p>Duration: {this.state.duration}</p>
+                  <div className="pb-4 text-break">
+                    {this.state.pagedesc}
+                  </div>
+                  <div className="pb-4">
                     <h5>Resources</h5>
                     Presentation Slides (PDF)
-                   
+                  </div>
                 </div>
-                </div>
-                </Container>
+              </Container>
             </div>
-            </div>
+          </div>
         )
     }
 }
 
 const mapStateToProps = (state, ownProps) => {
     const id = ownProps.match.params.id
-    const sid = ownProps.match.params.sid
+    const vid = ownProps.match.params.vid
     const mainItems = state.firebase.data.bookshelf
     const skill = mainItems ? mainItems.data[id] : null
     //console.log(state);
@@ -87,7 +81,7 @@ const mapStateToProps = (state, ownProps) => {
    return{
      skill: skill,
      id: id,
-     sid: sid
+     vid: vid
    }
 }
 //export default SkillDetail
